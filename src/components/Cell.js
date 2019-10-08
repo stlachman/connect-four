@@ -22,13 +22,15 @@ const RoundedCell = styled.button`
   }};
 
   border-radius: 50%;
-  border: 0;
+  border: 2px solid black;
+  width: 25px;
+  height: 25px;
   //also need to do it for background color white with O maybe not ternary
 `;
 
 const Cell = ({ cell }) => {
   return (
-    <div class="cell" style={{ maxWidth: "30px" }}>
+    <div style={{ maxWidth: "30px" }}>
       <RoundedCell>{cell}</RoundedCell>
     </div>
   );

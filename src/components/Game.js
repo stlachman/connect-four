@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Board from "./Board";
 
 const Game = () => {
-  //Future: change rows and columns
   const value = "O"; // by default
   const myGrid = [...Array(6)].map(e => Array(7).fill(value));
 
@@ -86,8 +85,6 @@ const Game = () => {
             ) {
               setWinner(currentPlayer);
             }
-
-            alert("4 HORIZONTALLY");
           }
         }
       }
@@ -104,7 +101,6 @@ const Game = () => {
               board[i + 3][j]
             )
           ) {
-            alert("4 Vertically");
           }
         }
       }
@@ -122,7 +118,6 @@ const Game = () => {
                 board[i + 3][j + 3]
               )
             ) {
-              alert("diagonal");
             }
           }
 
@@ -135,7 +130,6 @@ const Game = () => {
                 board[i + 3][j - 3]
               )
             ) {
-              alert("diagonal");
             }
           }
         }

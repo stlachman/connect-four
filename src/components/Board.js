@@ -1,12 +1,13 @@
 import React from "react";
 import Row from "./Row";
-import DropArrows from "./DropArrows";
+import DropArrows from "./DropRow";
 import styled from "styled-components";
 
 const Panel = styled.div`
   background-color: blue;
   max-width: 180px;
-  padding: 10px 20px;
+  padding: 12px 10px 10px;
+  margin: 0 auto;
 `;
 const Board = ({ board, dropPiece, resetGame, currentPlayer, winner }) => {
   const convertName = name => {
@@ -21,14 +22,18 @@ const Board = ({ board, dropPiece, resetGame, currentPlayer, winner }) => {
     }
   };
   return (
-    <div class="board" style={{ margin: "50px" }}>
+    <div style={{ maxWidth: "530px", margin: "0 auto" }}>
       <h3>{status(currentPlayer, winner)}</h3>
 
       <button onClick={resetGame}>Reset Game</button>
       <Panel>
-        <DropArrows dropPiece={dropPiece} length={board[0].length} />
-        {board.map(row => (
-          <Row row={row} />
+        <DropArrows
+          dropPiece={dropPiece}
+          currentPlayer={currentPlayer}
+          length={board[0].length}
+        />
+        {board.map((row, i) => (
+          <Row key={i} row={row} />
         ))}
       </Panel>
     </div>
