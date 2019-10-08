@@ -5,7 +5,7 @@ const DropBall = styled.div`
   height: 23px;
   width: 23px;
   border-radius: 50%;
-  transition: 0.2s ease-in-out;
+  transition: 0.275s ease-in-out;
 
   &:hover {
     cursor: pointer;

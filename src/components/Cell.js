@@ -25,7 +25,6 @@ const RoundedCell = styled.button`
   border: 2px solid black;
   width: 25px;
   height: 25px;
-  //also need to do it for background color white with O maybe not ternary
 `;
 
 const Cell = ({ cell }) => {
