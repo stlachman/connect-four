@@ -4,11 +4,32 @@ import DropArrows from "./DropRow";
 import styled from "styled-components";
 
 const Panel = styled.div`
-  background-color: blue;
+  background-color: #194772;
   max-width: 180px;
   padding: 12px 10px 10px;
   margin: 0 auto;
 `;
+
+const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+`;
+
+const Button = styled.button`
+  background-color: #ff3232;
+  border: 2px solid #ff3232;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: 0.275s all ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+`;
+
 const Board = ({ board, dropPiece, resetGame, currentPlayer, winner }) => {
   const convertName = name => {
     return name === "Y" ? `Yellow` : `Red`;
@@ -22,10 +43,13 @@ const Board = ({ board, dropPiece, resetGame, currentPlayer, winner }) => {
     }
   };
   return (
-    <div style={{ maxWidth: "530px", margin: "0 auto" }}>
-      <h3>{status(currentPlayer, winner)}</h3>
+    <div style={{ maxWidth: "530px", margin: "0 auto", padding: "0 15px" }}>
+      <h2>Connect Four!</h2>
+      <Container>
+        <h3 style={{ margin: "0" }}>{status(currentPlayer, winner)}</h3>
 
-      <button onClick={resetGame}>Reset Game</button>
+        <Button onClick={resetGame}>Reset Game</Button>
+      </Container>
       <Panel>
         <DropArrows
           dropPiece={dropPiece}

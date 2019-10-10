@@ -11,9 +11,9 @@ const DropBall = styled.div`
     cursor: pointer;
     background-color: ${({ currentPlayer }) => {
       if (currentPlayer == "Y") {
-        return "yellow";
+        return "#FFFF7F";
       } else if (currentPlayer == "R") {
-        return "red";
+        return "#FF3232";
       }
     }};
   }
